@@ -275,6 +275,11 @@ int process_arglist(int count, char** arglist) {
     }
   }
 
+  // make sure that there are no more than 9 pipes
+  if (num_pipes > MAX_PIPES) {
+    return 0;
+  }
+
   // Execute the appropriate command based on special symbols
   if (background) {
     return execute_background_command(arglist, background);
