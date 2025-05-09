@@ -230,6 +230,7 @@ int execute_standard_command(char** arglist) {
 
 int prepare(void) {
   struct sigaction sa;
+  memset(&sa, 0, sizeof(sa)); 
   sigemptyset(&sa.sa_mask); 
   sa.sa_flags = SA_RESTART; 
   sa.sa_handler = find_and_remove_zombies; 
