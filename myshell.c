@@ -84,7 +84,6 @@ int setup_and_execute_pipeline(char** commands[], int num_commands) {
         close(pipes[j][1]);
       }
       
-      // Execute the command
       execute_command(commands[i], 0);
     }
   }
@@ -124,7 +123,7 @@ int execute_background_command(char** arglist, int background_pos) {
     return 0;
   }
   
-  return 1; // This line is never reached, but included for compiler warnings
+  return 1; 
 }
 
 int execute_command_with_pipes(char** arglist, int pipe_positions[], int num_pipes) {
